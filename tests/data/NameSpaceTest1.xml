@@ -1,0 +1,34 @@
+<a:root xmlns:a="http://someurl.com">
+    <a:person>
+        <a:firstname>John</a:firstname>
+        <a:lastname>Doe</a:lastname>
+    </a:person>
+    <person2>
+        <firstname>John3</firstname>
+        <lastname>Doe3</lastname>
+    </person2>
+    <person3>
+        <firstname>John1</firstname>
+        <lastname>Smith</lastname>
+        <street>Streetvalue</street>
+        <city>NYC</city>
+    </person3>
+    <person>
+        <firstname>John32</firstname>
+        <lastname>Doe3</lastname>
+    </person>
+    <b:person2 xmlns:b="http://someurl2.com">
+        <b:street>Streetvalueb</b:street>
+        <b:city>NYC</b:city>
+        <b:region>NY</b:region>
+    </b:person2>
+    <d:person4 xmlns:d="http://someurl2.com">
+        <d:street>Streetvalued</d:street>
+        <e:city xmlns:e="http://someurl3.com">NYC</e:city>
+        <f:city1 xmlns:f="http://someurl3.com">
+            <f:shortname>NYC</f:shortname>
+            <f:longname>New York</f:longname>
+        </f:city1>
+        <d:region>NY</d:region>
+    </d:person4>
+</a:root>

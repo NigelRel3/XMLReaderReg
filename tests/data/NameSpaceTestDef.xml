@@ -1,0 +1,16 @@
+<a:root xmlns:a="http://someurl.com" xmlns="http://somedefurl.com">
+    <a:person>
+        <firstname>John</firstname>
+        <lastname>Doe</lastname>
+    </a:person>
+    <person2>
+        <firstname>John3</firstname>
+        <lastname>Doe3</lastname>
+    </person2>
+    <person3>
+        <firstname>John1</firstname>
+        <lastname>Smith</lastname>
+        <street>Streetvalue</street>
+        <city>NYC</city>
+    </person3>
+</a:root>

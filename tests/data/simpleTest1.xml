@@ -1,0 +1,26 @@
+<root>
+    <person>
+        <firstname>John</firstname>
+        <lastname>Doe</lastname>
+    </person>
+    <person2>
+        <firstname>John3</firstname>
+        <lastname>Doe3</lastname>
+    </person2>
+    <person3>
+        <firstname>John1</firstname>
+        <lastname>Smith</lastname>
+        <street>Streetvalue</street>
+        <city>NYC</city>
+    </person3>
+    <person4 id="12" />
+    <person>
+        <firstname>John32</firstname>
+        <lastname>Doe3</lastname>
+    </person>
+    <person2>
+        <street>Streetvalue</street>
+        <city>NYC</city>
+        <region>NY</region>
+    </person2>
+</root>

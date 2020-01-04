@@ -1,2 +1,6 @@
 .buildpath
 .project
+/vendor/
+/composer.lock
+/composer.phar
+/tests/report/
