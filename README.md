@@ -1,7 +1,7 @@
-### XMLReaderReg
+# XMLReaderReg
 An extension of PHP's XMLReader to include a simplified interface.
 
-#Quick Start
+### Quick Start
 
 Rather than having to use boiler plate code to fetch particular elements, XMLReaderReg allows you to register an interest in certain elements along with a callback.  This effectively changes it from a pull parser to a push parser.
 
@@ -81,7 +81,7 @@ will produce the following tree...
 /root/firstname[1]
 ```
 
-#Regex matching
+### Regex matching
 The matching process is as simple as working out where the data you want lies in the document.  You can be as explicit or as vague as you wish using regex's ability to match the content of the above hierarchy.
 
 From the quick start sample code...
@@ -101,7 +101,7 @@ Also something useful in regex's is capture groups,  notice that this last regex
 #The callback function
 The basic callback function definition is
 
-```php
+```
 function (mixed $data[, mixed $path]): void {}
 ```
 
@@ -141,9 +141,9 @@ The capture group(s) from the regex.
 
 If you don't use capture groups, you can omit the `$path` parameter.  If you do use capture groups, then it will pass an array which is the return value of `$matches` from [preg_match()](https://www.php.net/manual/en/function.preg-match.php) which is used internally to check the path against the regex patterns.
 
-##Options
+## Options
 
-#DOM Document owner
+### DOM Document owner
 
 ```php
 public function setDocument ( DOMDocument $doc ): void;
@@ -178,7 +178,7 @@ set to `false`, it will generate a path hierarchy of
 /root
 /root/person
 ```
-#Namespace usage - Output
+### Namespace usage - Output
 
 ```php
 public function setOutputNamespaces ( bool $outputNamespace ) : void;
@@ -187,7 +187,7 @@ If you don't need/want the namespaces in the output, calling this with `false` w
 
 Due to the processing this will incur an overhead.
 
-#Configuring array notation
+### Configuring array notation
 By default array notation is turned off, this will present duplicated elements as
 
 ```
@@ -209,7 +209,7 @@ Calling this with `false` will stop the generation of array indicies when matchi
 /root/firstname
 /root/firstname[1]
 ```
-#Stop the processing
+### Stop the processing
 
 ```php
 public function flagToStop () : void;
@@ -225,12 +225,12 @@ function (DOMElement $data, $path)
     $reader->flagToStop();
 }
 ```
-##Examples
+## Examples
 examples/XMLReaderBasic.php has a brief set of examples on how to use XMLReaderReg
 
-##Tests
+## Tests
 tests/XMLReaderRegTest.php is a PHPUnit test set for XMLReaderReg.
 
 Please note that `testFetchLargeFullRead` reads a 25MB XML file so will take some time to complete.
-##License
+## License
 Please see the LICENSE file.
