@@ -1,7 +1,7 @@
 # XMLReaderReg
 An extension of PHP's XMLReader to include a simplified interface.
 
-### Quick Start
+## Quick Start
 
 Rather than having to use boiler plate code to fetch particular elements, XMLReaderReg allows you to register an interest in certain elements along with a callback.  This effectively changes it from a pull parser to a push parser.
 
@@ -29,7 +29,7 @@ $reader->close();
 
 The main addition is the `process()` method, rather than looping through the document structure, `process()` is passed an array of regex and associated callback elements.  When a particular XML element matches the pattern you are interested in the callback will be passed the data from that element.
 
-#How the document hierarchy is encoded
+## How the document hierarchy is encoded
 As the document is loaded, the code builds a simple document hierarchy based on the nesting of the elements.  So...
 
 ```xml
@@ -81,7 +81,7 @@ will produce the following tree...
 /root/firstname[1]
 ```
 
-### Regex matching
+## Regex matching
 The matching process is as simple as working out where the data you want lies in the document.  You can be as explicit or as vague as you wish using regex's ability to match the content of the above hierarchy.
 
 From the quick start sample code...
@@ -98,7 +98,7 @@ will find any `<person>` element and allow an optional suffix for use when multi
 
 Also something useful in regex's is capture groups,  notice that this last regex is actually `(.*/person(?:\[\d*\])?)` in the code.  The capture groups will be passed to the callback.
 
-#The callback function
+## The callback function
 The basic callback function definition is
 
 ```
@@ -152,7 +152,7 @@ When using DOMDocument, the owner of a created node can be important.  If you wa
 
 If this is not called, all nodes will be owned by an internally created document.
 
-#Namespace usage - Matching
+### Namespace usage - Matching
 
 ```php
 public function setUseNamespaces ( bool $useNamespaces ): void;
