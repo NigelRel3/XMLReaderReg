@@ -14,11 +14,11 @@ $reader->open($inputFile);
 
 $reader->process([
     // Find all person elements
-    '(.*/person(?:\[\d*\])?)' => function (SimpleXMLElement $data, $path): void {
+    '(.*/person' => function (SimpleXMLElement $data, $path): void {
         echo "1) Value for ".$path." is ".PHP_EOL.
             $data->asXML().PHP_EOL;
     },
-    // Find the corresponding element in the hierarchy
+    // Find the /root/person2/firstname element in the document
     '/root/person2/firstname' => function (string $data): void {
         echo "3) Value for /root/person2/firstname is ". $data.PHP_EOL;
     }
