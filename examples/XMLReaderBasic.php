@@ -1,12 +1,11 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require_once __DIR__ . '/../XMLReaderReg.php';
-
 $inputFile = __DIR__ ."/../tests/data/simpleTest1.xml";
-$reader = new XMLReaderReg();
+$reader = new XMLReaderReg\XMLReaderReg();
 $reader->open($inputFile);
 
 $reader->process([

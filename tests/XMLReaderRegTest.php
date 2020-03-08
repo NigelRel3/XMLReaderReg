@@ -1,8 +1,7 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../XMLReaderReg.php';
-
 use PHPUnit\Framework\TestCase;
+use XMLReaderReg\XMLReaderReg;
+
 /**
  * @runTestsInSeparateProcesses
  * @preserveGlobalState disabled

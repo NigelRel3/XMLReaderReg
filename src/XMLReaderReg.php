@@ -1,6 +1,14 @@
 <?php
-
 declare(strict_types=1);
+
+namespace XMLReaderReg;
+
+use DOMDocument;
+use DOMElement;
+use DOMXPath;
+use ReflectionFunction;
+use SimpleXMLElement;
+use XMLReader;
 
 /**
  * @author NigelRen <nigelrel3@yahoo.co.uk>
@@ -53,13 +61,13 @@ class XMLReaderReg extends XMLReader {
 
     /**
      * Document used for importing data to SimpleXML or DOMElement
-     * @var DOMDocument
+     * @var \DOMDocument
      */
     private $doc = null;
     
     /**
      * Used for processing namespace removal.
-     * @var DOMXPath
+     * @var \DOMXPath
      */
     private $xpath = null;
     
@@ -204,6 +212,7 @@ class XMLReaderReg extends XMLReader {
         // See if interesed in this data
         foreach ( $this->dataMatch as $pathReg => $closure ) {
             // Check if matches regex...
+            $matches = [];
             if ( preg_match('#^'.$pathReg.'$#', $path, $matches) ) {
                 $closure($this->{$this->callableParam [ $pathReg ]}(), $matches );
             }
