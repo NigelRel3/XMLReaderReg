@@ -3,13 +3,19 @@ An extension of PHP's XMLReader to include a simplified interface.
 
 ## Quick Start
 
+XMLReaderReg can be installed using 
+
+```
+composer require nigelrel3/xml-reader-reg
+```
+
 Rather than having to use boiler plate code to fetch particular elements, XMLReaderReg allows you to register an interest in certain elements along with a callback.  This effectively changes it from a pull parser to a push parser.
 
 ```php
-require_once __DIR__ . '/../XMLReaderReg.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 $inputFile = __DIR__ ."/../tests/data/simpleTest1.xml";
-$reader = new XMLReaderReg();
+$reader = new XMLReaderReg\XMLReaderReg();
 $reader->open($inputFile);
 
 $reader->process([
