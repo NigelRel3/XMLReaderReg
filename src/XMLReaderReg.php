@@ -188,7 +188,13 @@ class XMLReaderReg extends XMLReader {
         
         foreach ( $this->dataMatch as $key => $callable )    {
             $reflection = new ReflectionFunction($callable);
-            $argType  = (string)$reflection->getParameters()[0]->getType();
+            $argType = $reflection->getParameters()[0]->getType();
+            if ( $argType != null ) {
+                $argType = $argType->getName();
+            }
+            else    {
+                $argType = 'string';
+            }
             // Set element associated closure according to type
             if ( isset($returnMethods[$argType]) )  {
                 $this->callableParam[ $key ] = $returnMethods[$argType];
